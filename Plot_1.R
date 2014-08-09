@@ -22,7 +22,7 @@ y$Date_new <- as.Date(paste(paste("0",substr(y$Date,3,3),sep=""),paste("0",subst
 
 
 #Save the plot
-png('rplot1-1.png')
+png('rplot1-1.png', width = 480, height = 480)
 
 #This builds the histogram for plot 1
 hist(y$Global_active_power,col="red",main="Global Active Power", xlab="Global Active Power")

@@ -24,7 +24,7 @@ y$Date_new <- as.Date(y$Date, "%d/%m/%Y")
 y$Date_time <- chron(dates=y$Date,times=y$Time,format=c('d/m/Y','h:m:s'))
 
 #Save the plot
-png('rplot2.png')
+png('rplot2.png', width = 480, height = 480)
 
 #This builds the histogram for plot 2
 plot(y$Date_time,y$Global_active_power,col="red",main="Global Active Power", ylab="Global Active Power (killowats)", xlab="", type="n")
