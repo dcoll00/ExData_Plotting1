@@ -27,8 +27,9 @@ y$Date_time <- chron(dates=y$Date,times=y$Time,format=c('d/m/Y','h:m:s'))
 png('rplot2.png', width = 480, height = 480)
 
 #This builds the histogram for plot 2
-plot(y$Date_time,y$Global_active_power,col="red",main="Global Active Power", ylab="Global Active Power (killowats)", xlab="", type="n")
+plot(y$Date_time,y$Global_active_power,col="red",main="Global Active Power", ylab="Global Active Power (killowats)", xlab="", xaxt="n", type="n")
 lines(y$Date_time,y$Global_active_power,type="l")
+axis(1,at=c(min(y$Date_time),y$Date_time[(nrow(y)/2)+1],max(y$Date_time)),labels=c("Thurs","Fri","Sat"), las=0)
 
 # reset the device
 dev.off()

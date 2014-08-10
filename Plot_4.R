@@ -31,22 +31,26 @@ par(mfrow =c(2,2))
 par(mar = c(4,4,2,2))
 
 # first graph
-plot(y$Date_time,y$Global_active_power,col="red",main="", ylab="Global Active Power (killowats)", xlab="", type="n")
+plot(y$Date_time,y$Global_active_power,col="red",main="", ylab="Global Active Power (killowats)", xlab="",xaxt="n", type="n")
 lines(y$Date_time,y$Global_active_power,type="l")
+axis(1,at=c(min(y$Date_time),y$Date_time[(nrow(y)/2)+1],max(y$Date_time)),labels=c("Thurs","Fri","Sat"), las=0)
 
 #Second graph
-plot(y$Date_time,y$Voltage,col="red",main="", ylab="Voltage", xlab="datetime", type="n")
+plot(y$Date_time,y$Voltage,col="red",main="", ylab="Voltage", xlab="datetime", xaxt="n",type="n")
 lines(y$Date_time,y$Voltage,type="l")
+axis(1,at=c(min(y$Date_time),y$Date_time[(nrow(y)/2)+1],max(y$Date_time)),labels=c("Thurs","Fri","Sat"), las=0)
 
 #Third Graph
-plot(y$Date_time,y$Sub_metering_1,col="red",main="",ylab="Energy sub metering", xlab="", type="n")
+plot(y$Date_time,y$Sub_metering_1,col="red",main="",ylab="Energy sub metering", xlab="",xaxt="n", type="n")
 lines(y$Date_time,y$Sub_metering_1,type="l",col="black")
 lines(y$Date_time,y$Sub_metering_2,type="l",col="red")
 lines(y$Date_time,y$Sub_metering_3,type="l",col="blue")
+axis(1,at=c(min(y$Date_time),y$Date_time[(nrow(y)/2)+1],max(y$Date_time)),labels=c("Thurs","Fri","Sat"), las=0)
 
 #Fourth graph
-plot(y$Date_time,y$Global_reactive_power,col="red",main="", ylab="Global_reactive_power", xlab="datetime", type="n")
+plot(y$Date_time,y$Global_reactive_power,col="red",main="", ylab="Global_reactive_power", xlab="datetime", xaxt="n",type="n")
 lines(y$Date_time,y$Global_reactive_power,type="l")
+axis(1,at=c(min(y$Date_time),y$Date_time[(nrow(y)/2)+1],max(y$Date_time)),labels=c("Thurs","Fri","Sat"), las=0)
 
 # reset the device
 dev.off()

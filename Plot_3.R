@@ -27,11 +27,12 @@ y$Date_time <- chron(dates=y$Date,times=y$Time,format=c('d/m/Y','h:m:s'))
 png('rplot3.png', width = 480, height = 480)
 
 #This builds the histogram for plot 3
-plot(y$Date_time,y$Sub_metering_1,col="red",main="",ylab="Energy sub metering", xlab="", type="n")
+plot(y$Date_time,y$Sub_metering_1,col="red",main="",ylab="Energy sub metering", xlab="",xaxt="n", type="n")
 lines(y$Date_time,y$Sub_metering_1,type="l",col="black")
 lines(y$Date_time,y$Sub_metering_2,type="l",col="red")
 lines(y$Date_time,y$Sub_metering_3,type="l",col="blue")
 legend("topright",c("Sub metering 1","Sub metering 2","Sub metering 3"),lty=1, col= c("black","red","blue"))
+axis(1,at=c(min(y$Date_time),y$Date_time[(nrow(y)/2)+1],max(y$Date_time)),labels=c("Thurs","Fri","Sat"), las=0)
 
 # reset the device
 dev.off()
